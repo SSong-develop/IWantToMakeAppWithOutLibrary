@@ -29,12 +29,7 @@ class MainRepository{
             }
         }
         val jsonArray = JsonParser.stringToJsonArray(dataBuilder.toString())
-        synchronized(userList){
-            for (i in 0 until jsonArray.length()) {
-                val parseData = format.decodeFromString<UserInfo>(jsonArray[i].toString())
-                userList.add(parseData)
-            }
-        }
-        return userList
+
+        return JsonParser.jsonArrayToUserInfoList(jsonArray)
     }
 }
