@@ -9,7 +9,7 @@ class MainViewModelFactory(
     private val mainRepository: MainRepository
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        require(modelClass.isAssignableFrom(MainViewModel::class.java)){"Unknown class name"}
+        require(modelClass.isAssignableFrom(MainViewModel::class.java)) { "Unknown class name" }
         return MainViewModel(mainRepository) as T
     }
 }

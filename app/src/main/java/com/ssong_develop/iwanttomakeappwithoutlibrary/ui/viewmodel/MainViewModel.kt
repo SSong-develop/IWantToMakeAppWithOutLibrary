@@ -1,6 +1,5 @@
 package com.ssong_develop.iwanttomakeappwithoutlibrary.ui.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -12,10 +11,10 @@ import kotlinx.coroutines.launch
 
 class MainViewModel(
     private val mainRepository: MainRepository
-) : ViewModel(){
+) : ViewModel() {
 
     private val _userList = MutableLiveData<List<UserInfo>>()
-    val userList : LiveData<List<UserInfo>>
+    val userList: LiveData<List<UserInfo>>
         get() = _userList
 
     fun fetchUser() = viewModelScope.launch(Dispatchers.IO) {

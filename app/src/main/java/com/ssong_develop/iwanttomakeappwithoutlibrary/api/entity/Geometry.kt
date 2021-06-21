@@ -4,6 +4,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Geometry(
-    val lat : String,
-    val lng : String
+    val lat: String,
+    val lng: String
 )
